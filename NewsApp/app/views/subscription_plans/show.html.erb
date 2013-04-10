@@ -1,0 +1,8 @@
+<h1>Subscription Plan</h1>
+<ul>
+	<li>Name: <%= @subscription_plan.name %> </li>
+	<li>Price: <%= @subscription_plan.price %> </li>
+	<li>Weekly: <%= @subscription_plan.weekly == 0 ? "No" : "Yes" %> </li>
+</ul>
+<%= link_to "Delete", subscription_plan_path(@subscription_plan), method: :delete, class: "btn" %>
+<%= link_to "Edit", edit_subscription_plan_path(@subscription_plan), class: "btn" %>

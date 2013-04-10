@@ -1,4 +1,7 @@
 <h1>Newspaper</h1>
 <ul>
-	<li> <%= @newspaper.name %> </li>
+	<li>Name: <%= @newspaper.name %> </li>
+	<li>Editor: <%= @newspaper.editor %> </li>
 </ul>
+<%= link_to "Delete", newspaper_path(@newspaper), method: :delete, class: "btn" %> 
+<%= link_to "Edit", edit_newspaper_path(@newspaper), class: "btn" %> 

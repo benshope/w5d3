@@ -1,6 +1,6 @@
 class NewspapersController < ApplicationController
   def index
-    @newspaper = Newspaper.all
+    @newspapers = Newspaper.all
   end
 
   def show
@@ -9,6 +9,7 @@ class NewspapersController < ApplicationController
 
   def new
     @newspaper = Newspaper.new
+    @newspaper.subscription_plans.build
   end
 
   def create
@@ -25,8 +26,8 @@ class NewspapersController < ApplicationController
   end
 
   def update
-    @newspaper.update_attributes(params[:newspaper])
-    if @newspaper.save
+    @newspaper = Newspaper.find_by_id(params[:id])
+    if @newspaper.update_attributes(params[:newspaper])
       redirect_to newspaper_path(@newspaper)
     else
       render :edit
@@ -36,5 +37,6 @@ class NewspapersController < ApplicationController
   def destroy
     @newspaper = Newspaper.find_by_id(params[:id])
     @newspaper.destroy
+    redirect_to newspapers_path
   end
 end
