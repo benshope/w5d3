@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: subscription_plans
+#
+#  id           :integer          not null, primary key
+#  name         :string(255)
+#  price        :integer
+#  weekly       :boolean
+#  newspaper_id :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
 require 'test_helper'
 
 class SubscriptionPlanTest < ActiveSupport::TestCase

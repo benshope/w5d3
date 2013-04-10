@@ -1,0 +1,10 @@
+<h1>New Team</h1>
+<%= form_for @team do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<%= fields_for :students do |sf| %>
+		<%= sf.label :name, "Student Name" %>
+		<%= sf.text_field :name %>
+	<% end %>
+	<%= f.submit %>
+<% end %>
