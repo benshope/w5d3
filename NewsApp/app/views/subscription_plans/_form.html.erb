@@ -1,10 +1,17 @@
 <%= form_for @subscription_plan do |f| %>
+
 	<%= f.label :name %>
 	<%= f.text_field :name %><br>
+
 	<%= f.label :price %>
 	<%= f.number_field :price %><br>
-	<%= f.label :weekly %>
-	<%= f.number_field :weekly %><br>
-	<%= f.hidden_field :newspaper_id, value: params[:newspaper_id] %>
+
+	<%= f.radio_button :weekly, false, :checked => true %> 
+  	<%= label :weekly_0, 'Daily' %>
+	<%= f.radio_button :weekly, true %>
+  	<%= label :weekly_1, 'Weekly' %><br>
+
+	<%= f.hidden_field :newspaper_id, value: params[:newspaper_id] %><br>
+
 	<%= f.submit nil, :class => "btn" %>
 <% end %>

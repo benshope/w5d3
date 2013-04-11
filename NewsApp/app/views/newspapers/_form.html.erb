@@ -11,9 +11,9 @@
 		<%= spf.number_field :price %><br>
 
 		<%= spf.radio_button :weekly, '0', :checked => true %> 
-  		<%= label :contactmethod_0, 'Daily' %>
+  		<%= spf.label :weekly_0, 'Daily' %>
 		<%= spf.radio_button :weekly, '1' %>
-  		<%= label :contactmethod_1, 'Weekly' %><br><br>
+  		<%= spf.label :weekly_1, 'Weekly' %><br><br>
 	<% end %>
 	<%= f.submit nil, :class => "btn" %>
 <% end %>

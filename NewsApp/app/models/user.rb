@@ -11,4 +11,7 @@
 
 class User < ActiveRecord::Base
   attr_accessible :name, :password
+
+  validates :name, :password, :presence => true
+  validates :password, :length => { :minimum => 2 }
 end
