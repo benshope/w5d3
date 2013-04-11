@@ -1,6 +1,6 @@
 NewsApp::Application.routes.draw do
   resources :newspapers do
-    resources :subscriptions
+    resources :subscription_plans
   end
   resources :subscription_plans
   resources :subscriptions

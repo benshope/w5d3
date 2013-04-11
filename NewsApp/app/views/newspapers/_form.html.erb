@@ -3,14 +3,17 @@
 	<%= f.text_field :name %><br>
 	<%= f.label :editor %>
 	<%= f.text_field :editor %><br><br>
-	<%= f.label "Subscription" %><br>
+	<h3>Subscription</h3><br>
 	<%= f.fields_for :subscription_plans do |spf| %>
 		<%= spf.label :name%>
 		<%= spf.text_field :name %><br>
 		<%= spf.label :price %>
 		<%= spf.number_field :price %><br>
-		<%= spf.radio_button :weekly, "0" %>
-		<%= spf.radio_button :weekly, "1" %><br>
+
+		<%= spf.radio_button :weekly, '0', :checked => true %> 
+  		<%= label :contactmethod_0, 'Daily' %>
+		<%= spf.radio_button :weekly, '1' %>
+  		<%= label :contactmethod_1, 'Weekly' %><br><br>
 	<% end %>
-	<%= f.submit %>
+	<%= f.submit nil, :class => "btn" %>
 <% end %>

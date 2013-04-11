@@ -3,7 +3,8 @@
 	<%= f.text_field :name %><br>
 	<%= f.label :price %>
 	<%= f.number_field :price %><br>
-	<%= f.label :newspaper_id %>
-	<%= f.number_field :newspaper_id %><br>
-	<%= f.submit %>
+	<%= f.label :weekly %>
+	<%= f.number_field :weekly %><br>
+	<%= f.hidden_field :newspaper_id, value: params[:newspaper_id] %>
+	<%= f.submit nil, :class => "btn" %>
 <% end %>

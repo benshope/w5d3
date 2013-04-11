@@ -3,5 +3,6 @@
 	<li>Name: <%= @newspaper.name %> </li>
 	<li>Editor: <%= @newspaper.editor %> </li>
 </ul>
+<%= link_to "New Subscription Plan", new_newspaper_subscription_plan_path(@newspaper), class: "btn" %> 
 <%= link_to "Delete", newspaper_path(@newspaper), method: :delete, class: "btn" %> 
 <%= link_to "Edit", edit_newspaper_path(@newspaper), class: "btn" %> 
